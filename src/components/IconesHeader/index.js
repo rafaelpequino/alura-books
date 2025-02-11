@@ -31,7 +31,7 @@ const Icones = () => {
     
     return (
         <IconesContainer>
-            {icones.map(icone => <Icone><img src={icone.imagem} alt='icone.alt' /></Icone>)}
+            {icones.map(icone => <Icone key={icone.imagem}><img src={icone.imagem} alt={icone.alt} /></Icone>)}
         </IconesContainer>
     )
 }

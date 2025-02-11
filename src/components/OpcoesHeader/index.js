@@ -26,7 +26,7 @@ const Opcoes = () => {
 
     return (
         <OpcoesContainer>
-            {textoOpcoes.map(texto => <Opcao>{texto}</Opcao>)}
+            {textoOpcoes.map(texto => <Opcao key={texto}>{texto}</Opcao>)}
         </OpcoesContainer>
     )
 }
