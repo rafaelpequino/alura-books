@@ -1,17 +1,11 @@
 import './App.css';
-import Logo from './components/Logo';
-import OpcoesHeader from './components/OpcoesHeader';
-import IconesHeader from './components/IconesHeader';
+import Header from './components/Header';
 
 function App() {
 
   return (
     <div className='App'>
-      <header className='App-header'>
-        <Logo />
-        <OpcoesHeader />
-        <IconesHeader />
-      </header>
+      <Header />
     </div>
   );
 }
