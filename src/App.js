@@ -1,7 +1,7 @@
 import './App.css';
-import Icones from './components/Icones';
 import Logo from './components/Logo';
-import Opcoes from './components/Opcoes';
+import OpcoesHeader from './components/OpcoesHeader';
+import IconesHeader from './components/IconesHeader';
 
 function App() {
 
@@ -9,8 +9,8 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <Logo />
-        <Opcoes />
-        <Icones />
+        <OpcoesHeader />
+        <IconesHeader />
       </header>
     </div>
   );
