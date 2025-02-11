@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import InputPesquisa from "../InputPesquisa/Index";
+import { useState } from "react";
+import { livros } from './dadosPesquisa'
 
 const Titulo = styled.h2`
     color: #FFF;
@@ -24,11 +26,20 @@ const PesquisaSection = styled.div`
 `
 
 const Pesquisa = () => {
+    const [LivrosPesquisados, setLivrosPesquisados] = useState([]);
+
     return (
         <PesquisaSection>
             <Titulo>Já sabe por onde começar?</Titulo>
             <Subtitulo>Encontre seu livro em nossa estante.</Subtitulo>
-            <InputPesquisa placeholder="Escreva sua próxima leitura." />
+            <InputPesquisa 
+                placeholder="Escreva sua próxima leitura."
+                onBlur={evento => {
+                    const textoDigitado = evento.target.value
+                    const resultadoPesquisa = livros.filter(livro => livro.nome.includes(textoDigitado))
+                    setLivrosPesquisados(resultadoPesquisa)
+                }}
+            />
         </PesquisaSection>
     )
 }
