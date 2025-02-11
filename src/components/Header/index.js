@@ -2,15 +2,22 @@ import './Header.css'
 import Logo from '../Logo';
 import OpcoesHeader from '../OpcoesHeader';
 import IconesHeader from '../IconesHeader';
+import styled from 'styled-components';
+
+const HeaderContainer = styled.header`
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+`
 
 const Header = () => {
-    return (
-        <header className='App-header'>
-        <Logo />
-        <OpcoesHeader />
-        <IconesHeader />
-      </header>
-    )
+  return (
+    <HeaderContainer>
+      <Logo />
+      <OpcoesHeader />
+      <IconesHeader />
+    </HeaderContainer>
+  )
 }
 
 export default Header
