@@ -25,6 +25,15 @@ const PesquisaSection = styled.div`
     width: 100%;
 `
 
+const DivLivro = styled.div`
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+`
+
+
 const Pesquisa = () => {
     const [LivrosPesquisados, setLivrosPesquisados] = useState([]);
 
@@ -40,6 +49,14 @@ const Pesquisa = () => {
                     setLivrosPesquisados(resultadoPesquisa)
                 }}
             />
+            <div>
+                { LivrosPesquisados.map( livro => (
+                    <DivLivro key={livro.nome}>
+                        <img src={livro.src} />
+                        <p>{livro.nome}</p>
+                    </DivLivro>
+                )) }
+            </div>
         </PesquisaSection>
     )
 }
