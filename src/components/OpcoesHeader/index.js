@@ -1,4 +1,4 @@
-import './Opcoes.css'
+import './OpcoesHeader.css'
 
 const Opcoes = () => {
 

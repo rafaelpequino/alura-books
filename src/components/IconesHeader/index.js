@@ -1,4 +1,4 @@
-import './Icones.css'
+import './IconesHeader.css'
 
 const Icones = () => {
 
@@ -15,7 +15,7 @@ const Icones = () => {
     
     return (
         <ul className='opcoes'>
-            {icones.map(icone => <li className='opcaoIcone'><img src={icone.imagem} alt='icone.alt' /></li>)}
+            {icones.map(icone => <li className='icone'><img src={icone.imagem} alt='icone.alt' /></li>)}
         </ul>
     )
 }
