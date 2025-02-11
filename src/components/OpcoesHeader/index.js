@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const OpcoessContainer = styled.ul`
+const OpcoesContainer = styled.ul`
     display: flex;
 `
 
@@ -9,7 +9,7 @@ const Opcao = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 40px;
+    min-width: 120px;
     height: 100%;
     padding: 0 5px;
     text-align: center;
@@ -25,9 +25,9 @@ const Opcoes = () => {
     ]
 
     return (
-        <OpcoessContainer>
+        <OpcoesContainer>
             {textoOpcoes.map(texto => <Opcao>{texto}</Opcao>)}
-        </OpcoessContainer>
+        </OpcoesContainer>
     )
 }
 
