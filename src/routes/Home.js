@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import Pesquisa from './components/Pesquisa';
-import UltimosLancamentos from './components/UltimosLancamentos';
+import Pesquisa from '../components/Pesquisa';
+import UltimosLancamentos from '../components/UltimosLancamentos';
 
 const AppContainer = styled.div`
     width: 100%;
     height: max-content;
 `
 
-function App() {
+function Home() {
 
   return (
     <AppContainer>
@@ -17,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
