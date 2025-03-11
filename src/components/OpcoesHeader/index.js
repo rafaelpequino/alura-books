@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 const OpcoesContainer = styled.ul`
     display: flex;
@@ -14,19 +15,34 @@ const Opcao = styled.li`
     padding: 0 5px;
     text-align: center;
     cursor: pointer;
+    color: #000;
+    text-decoration: none;
 `
 
 const Opcoes = () => {
 
     const textoOpcoes = [
-        'CATEGORIAS',
-        'FAVORITOS',
-        'MINHA ESTANTE'
+        {
+            name: 'CATEGORIAS',
+            route: '/categorias'
+        },
+        {
+            name: 'FAVORITOS',
+            route: '/favoritos'
+        },
+        {
+            name: 'MINHA ESTANTE',
+            route: '/estante'
+        }
     ]
 
     return (
         <OpcoesContainer>
-            {textoOpcoes.map(texto => <Opcao key={texto}>{texto}</Opcao>)}
+            {textoOpcoes.map(texto => (
+                <Link to={texto.route}>
+                    <Opcao key={texto.name}>{texto.name}</Opcao>
+                </Link>
+            ))}
         </OpcoesContainer>
     )
 }
