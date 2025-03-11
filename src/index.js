@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Header';
+import Favoritos from './routes/Favoritos';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -41,7 +42,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/favoritos" element={<p>Oi!</p>} />
+        <Route path="/favoritos" element={<Favoritos />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
