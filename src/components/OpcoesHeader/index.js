@@ -39,7 +39,7 @@ const Opcoes = () => {
     return (
         <OpcoesContainer>
             {textoOpcoes.map(texto => (
-                <Link to={texto.route}>
+                <Link to={texto.route} key={texto.name}>
                     <Opcao key={texto.name}>{texto.name}</Opcao>
                 </Link>
             ))}

@@ -22,10 +22,10 @@ const NovosLivrosContainer = styled.div`
 const UltimosLancamentos = () => {
     return (
         <LancamentosContainer>
-            <Titulo cor="#EB9B00">ÚLTIMOS LANÇAMENTOS</Titulo>
+            <Titulo $cor="#EB9B00">ÚLTIMOS LANÇAMENTOS</Titulo>
             <NovosLivrosContainer>
                 {livros.map(livro => (
-                    <img src={livro.src} />
+                    <img src={livro.src} key={livro.id} alt={livro.nome} />
                 ))}
             </NovosLivrosContainer>
             <CardRecomenda 
