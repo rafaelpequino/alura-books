@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import InputPesquisa from "../InputPesquisa/Index";
-import { useState } from "react";
-import { livros } from './dadosPesquisa'
+import { useEffect, useState } from "react";
+import { getLivros } from "../../services/livros";
 
 const Titulo = styled.h2`
     color: #FFF;
@@ -35,7 +35,17 @@ const DivLivro = styled.div`
 
 
 const Pesquisa = () => {
-    const [LivrosPesquisados, setLivrosPesquisados] = useState([]);
+    const [livrosPesquisados, setLivrosPesquisados] = useState([]);
+    const [livros, setLivros] = useState([]);
+
+    useEffect(() => {
+        fetchLivros()
+    }, [])
+
+    async function fetchLivros() {
+        const livrosDaAPI = await getLivros()
+        setLivros(livrosDaAPI);
+    }
 
     return (
         <PesquisaSection>
@@ -50,7 +60,7 @@ const Pesquisa = () => {
                 }}
             />
             <div>
-                { LivrosPesquisados.map( livro => (
+                { livrosPesquisados.map( livro => (
                     <DivLivro key={livro.nome}>
                         <img src={livro.src} />
                         <p>{livro.nome}</p>
