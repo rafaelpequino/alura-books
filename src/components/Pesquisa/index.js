@@ -2,6 +2,7 @@ import styled from "styled-components"
 import InputPesquisa from "../InputPesquisa/Index";
 import { useEffect, useState } from "react";
 import { getLivros } from "../../services/livros";
+import { postFavorito } from "../../services/favoritos";
 
 const Titulo = styled.h2`
     color: #FFF;
@@ -53,13 +54,18 @@ const Pesquisa = () => {
         setLivros(livrosDaAPI);
     }
 
+    async function insertFavorito(id) {
+        await postFavorito(id)
+        alert('Livro adicionado aos favoritos!')
+    }
+
     return (
         <PesquisaSection>
             <Titulo>Já sabe por onde começar?</Titulo>
             <Subtitulo>Encontre seu livro em nossa estante.</Subtitulo>
             <InputPesquisa 
                 placeholder="Escreva sua próxima leitura."
-                onBlur={evento => {
+                onChange={evento => {
                     const textoDigitado = evento.target.value
                     const resultadoPesquisa = livros.filter(livro => livro.nome.includes(textoDigitado))
                     setLivrosPesquisados(resultadoPesquisa)
@@ -67,7 +73,7 @@ const Pesquisa = () => {
             />
             <div>
                 { livrosPesquisados.map( livro => (
-                    <DivLivro key={livro.nome}>
+                    <DivLivro onClick={() => insertFavorito(livro.id) } key={livro.nome} >
                         <img src={livro.src} />
                         <p>{livro.nome}</p>
                     </DivLivro>
