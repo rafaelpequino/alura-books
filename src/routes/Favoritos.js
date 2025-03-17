@@ -6,7 +6,8 @@ import { getFavoritos } from '../services/favoritos';
 
 const AppContainer = styled.div`
    max-width: 100vw;
-   height: 100vh;
+   min-height: 100vh;
+   heigth: max-content;
    background-image: linear-gradient(90deg,#002F52 35%,#326589 165%);
 `
 
